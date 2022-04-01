@@ -48,6 +48,7 @@ body {
 }
 .my-card {
   transition: 0.25s;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-item {
@@ -63,4 +64,17 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.gallery {
+  padding: 80px 0px;
+}
+img {
+  max-width: 100%;
+}
+.gallery img {
+  background: #ffffff;
+  padding: 15px;
+  width: 100%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }

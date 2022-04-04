@@ -78,3 +78,13 @@ img {
   width: 100%;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
+.info-card {
+  width: 17rem;
+  height: 17rem;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+.the-card .info-card a:hover {
+  scale: (1.1, 1.1);
+  transition-delay: 0.1s;
+  transition-duration: 0.25s;
+}

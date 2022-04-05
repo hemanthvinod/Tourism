@@ -1,21 +1,7 @@
-.gradient-custom {
-  /* fallback for old browsers */
-  background: #ffffff;
-
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(
-    to bottom right,
-    rgb(247, 247, 247),
-    rgb(34, 187, 51)
-  );
-
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(
-    to bottom right,
-    rgb(255, 255, 255),
-    rgb(34, 187, 51)
-  );
+html {
+  height: 100%;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +10,7 @@
 
 body {
   position: relative;
-  min-height: 100vh;
+  min-height: 100%;
   padding-bottom: 100px;
 }
 
@@ -62,8 +48,9 @@ body {
 
 #footer {
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
+  margin-bottom: 0px;
 }
 
 .gallery {

@@ -92,29 +92,33 @@
 
     <!-- login form -->
 
-    <form class="container text-center">
+    <form class="container text-center" id="form1" action="/">
       <h2 class="text-center text-success py-3">LOGIN</h2>
-      <div class="form-group ms-auto me-auto" style="max-width: 30rem">
-        <label class="py-3" for="exampleInputEmail1">Email address</label>
+      <div
+        class="form-group ms-auto me-auto input-control"
+        style="max-width: 30rem"
+      >
+        <label class="py-3" for="InputEmail">Email address</label>
         <input
-          type="email"
+          type="text"
           class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
+          id="email"
           placeholder="Enter email"
         />
-        <small id="emailHelp" class="form-text text-muted"
-          >We'll never share your email with anyone else.</small
-        >
+        <div class="error"></div>
       </div>
-      <div class="form-group ms-auto me-auto" style="max-width: 30rem">
-        <label class="py-3" for="exampleInputPassword1">Password</label>
+      <div
+        class="form-group ms-auto me-auto input-control"
+        style="max-width: 30rem"
+      >
+        <label class="py-3" for="InputPassword">Password</label>
         <input
           type="password"
           class="form-control"
-          id="exampleInputPassword1"
+          id="password"
           placeholder="Password"
         />
+        <div class="error"></div>
       </div>
 
       <button type="submit" class="btn btn-success my-3">Submit</button>
@@ -139,5 +143,7 @@
     </footer>
 
     <!-- footer -->
+
+    <script src="login.js"></script>
   </body>
 </html>

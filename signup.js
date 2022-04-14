@@ -6,7 +6,7 @@ function validation() {
   var emails = document.getElementById("emails").value;
 
   var re = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-  var rs = /^\d{10}$/;
+  // var rs = /^\d{10}$/;
 
   if (user == "") {
     document.getElementById("username").innerHTML =
@@ -52,7 +52,7 @@ function validation() {
     return false;
   }
 
-  if (!re.test(mobileNumber) && !rs.test(mobileNumber)) {
+  if (!re.test(mobileNumber)) {
     document.getElementById("mobileno").innerHTML =
       "**format should be XXX-XXX-XXX or XXX XXX XXX or XXX.XXX.XXX or 10 digits";
     return false;
@@ -113,17 +113,3 @@ password.addEventListener("input", () => {
     strengthBadge.style.display = "none";
   }
 });
-
-// function validatePhone() {
-//   var mobileNumber = document.getElementById("mobileNumber");
-//   var rs = /^\d{10}$/;
-//   var re = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-
-//   if (mobileNumber.value.match(re) || mobileNumber.value.match(rs)) {
-//     return true;
-//   } else {
-//     document.getElementById("mobileno").innerText =
-//       "This is not a valid phone number format";
-//     return false;
-//   }
-// }

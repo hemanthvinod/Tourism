@@ -1,10 +1,11 @@
 const form = document.getElementById("form1");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  checkInputs();
-});
+// form.addEventListener("submit", (e) => {
+//   if (!checkInputs()) {
+//     e.preventDefault();
+//   }
+// });
 
 const isEmailvalid = (email) => {
   const re =
@@ -46,5 +47,13 @@ function checkInputs() {
     setError(password, "Password cannot be empty");
   } else if (passwordValue.length < 8) {
     setError(password, "Password must be atleat 8 character");
-  } else setSuccess(password);
+  } else {
+    setSuccess(password);
+  }
+
+  if (isEmailvalid(emailValue) && passwordValue.length >= 8) {
+    return true;
+  } else {
+    return false;
+  }
 }

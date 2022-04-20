@@ -1,71 +1,107 @@
 function validation() {
-  var user = document.getElementById("user").value;
-  var pass = document.getElementById("pass").value;
-  var confirmpass = document.getElementById("conpass").value;
-  var mobileNumber = document.getElementById("mobileNumber").value;
-  var emails = document.getElementById("emails").value;
+  var user = document.getElementById("user").value.trim();
+  var pass = document.getElementById("pass").value.trim();
+  var confirmpass = document.getElementById("conpass").value.trim();
+  var mobileNumber = document.getElementById("mobileNumber").value.trim();
+  var emails = document.getElementById("emails").value.trim();
 
-  var re = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-  // var rs = /^\d{10}$/;
+  var re = /^([0-9]{3})[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  var rs =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   if (user == "") {
     document.getElementById("username").innerHTML =
       " ** Please fill the username field";
     return false;
+  } else {
+    document.getElementById("username").innerHTML = "";
   }
-  if (user.length <= 2 || user.length > 20) {
+
+  if (user.length <= 5 || user.length > 20) {
     document.getElementById("username").innerHTML =
-      " ** Username length must be between 2 and 20";
+      " ** Username length must be between 5 and 20";
     return false;
+  } else {
+    document.getElementById("username").innerHTML = "";
   }
+
   if (!isNaN(user)) {
     document.getElementById("username").innerHTML =
       " ** only characters are allowed";
     return false;
+  } else {
+    document.getElementById("username").innerHTML = "";
   }
 
-  if (pass == "") {
+  // if (pass == "") {
+  //   document.getElementById("passwords").innerHTML =
+  //     " ** Please fill the password field";
+  //   return false;
+  // } else {
+  //   document.getElementById("passwords").innerHTML = "";
+  // }
+
+  // if (pass.length < 8 || pass.length > 20) {
+  //   document.getElementById("passwords").innerHTML =
+  //     " ** Passwords length must be atleat 8 or a max of 20";
+  //   return false;
+  // } else {
+  //   document.getElementById("passwords").innerHTML = "";
+  // }
+
+  if (!rs.test(pass)) {
     document.getElementById("passwords").innerHTML =
-      " ** Please fill the password field";
+      " ** Required: atleat length 8, 1 uppercase, 1 lowercase, 1 number and a special character";
     return false;
-  }
-  if (pass.length <= 5 || pass.length > 20) {
-    document.getElementById("passwords").innerHTML =
-      " ** Passwords length must be between  5 and 20";
-    return false;
+  } else {
+    document.getElementById("passwords").innerHTML = "";
   }
 
   if (pass != confirmpass) {
     document.getElementById("confrmpass").innerHTML =
       " ** Password does not match the confirmed password";
     return false;
+  } else {
+    document.getElementById("confrmpass").innerHTML = "";
   }
+
   if (confirmpass == "") {
     document.getElementById("confrmpass").innerHTML =
       " ** Please fill the confirm password field";
     return false;
+  } else {
+    document.getElementById("confrmpass").innerHTML = "";
   }
 
   if (mobileNumber == "") {
     document.getElementById("mobileno").innerHTML =
-      " ** Please fill the mobile NUmber field";
+      " ** Please fill the mobile Number field";
     return false;
+  } else {
+    document.getElementById("mobileno").innerHTML = "";
   }
 
   if (!re.test(mobileNumber)) {
     document.getElementById("mobileno").innerHTML =
       "**format should be XXX-XXX-XXX or XXX XXX XXX or XXX.XXX.XXX or 10 digits";
     return false;
+  } else {
+    document.getElementById("mobileno").innerHTML = "";
   }
 
   if (emails == "") {
     document.getElementById("emailids").innerHTML =
-      " ** Please fill the email idx` field";
+      " ** Please fill the email id field";
     return false;
+  } else {
+    document.getElementById("emailids").innerHTML = "";
   }
+
   if (emails.indexOf("@") <= 0) {
     document.getElementById("emailids").innerHTML = " ** @ Invalid Position";
     return false;
+  } else {
+    document.getElementById("emailids").innerHTML = "";
   }
 
   if (
@@ -74,6 +110,8 @@ function validation() {
   ) {
     document.getElementById("emailids").innerHTML = " ** . Invalid Position";
     return false;
+  } else {
+    document.getElementById("emailids").innerHTML = "";
   }
 }
 
@@ -82,10 +120,10 @@ let password = document.getElementById("pass");
 let strengthBadge = document.getElementById("strengthinfo");
 
 let strongPassword = new RegExp(
-  "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})"
+  "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{11,})"
 );
 let mediumPassword = new RegExp(
-  "((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))"
+  "((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{11,}))"
 );
 
 function StrengthChecker(Password) {

@@ -92,7 +92,11 @@
 
     <!-- login form -->
 
-    <form class="container text-center" id="form1" action="/">
+    <form
+      id="form1"
+      class="container text-center"
+      onsubmit=" return checkInputs()"
+    >
       <h2 class="text-center text-success py-3">LOGIN</h2>
       <div
         class="form-group ms-auto me-auto input-control"

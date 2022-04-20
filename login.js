@@ -34,6 +34,8 @@ const setSuccess = (element) => {
 function checkInputs() {
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
+  var rs =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~@$!%*?&#~^_])[A-Za-z\d@$!%*?&#~^_]{8,}$/;
 
   if (emailValue == "") {
     setError(email, "Email is required");
@@ -43,15 +45,16 @@ function checkInputs() {
     setSuccess(email);
   }
 
-  if (passwordValue === "") {
-    setError(password, "Password cannot be empty");
-  } else if (passwordValue.length < 8) {
-    setError(password, "Password must be atleat 8 character");
+  if (!rs.test(passwordValue)) {
+    setError(
+      password,
+      "Required: atleast length 8, 1 uppercase, 1 lowercase, 1 number and a special character"
+    );
   } else {
     setSuccess(password);
   }
 
-  if (isEmailvalid(emailValue) && passwordValue.length >= 8) {
+  if (isEmailvalid(emailValue) && rs.test(passwordValue)) {
     return true;
   } else {
     return false;

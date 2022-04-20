@@ -7,7 +7,7 @@ function validation() {
 
   var re = /^([0-9]{3})[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
   var rs =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~@$!%*?&#~^_])[A-Za-z\d@$!%*?&#~^_]{8,}$/;
 
   if (user == "") {
     document.getElementById("username").innerHTML =
@@ -32,26 +32,9 @@ function validation() {
   } else {
     document.getElementById("username").innerHTML = "";
   }
-
-  // if (pass == "") {
-  //   document.getElementById("passwords").innerHTML =
-  //     " ** Please fill the password field";
-  //   return false;
-  // } else {
-  //   document.getElementById("passwords").innerHTML = "";
-  // }
-
-  // if (pass.length < 8 || pass.length > 20) {
-  //   document.getElementById("passwords").innerHTML =
-  //     " ** Passwords length must be atleat 8 or a max of 20";
-  //   return false;
-  // } else {
-  //   document.getElementById("passwords").innerHTML = "";
-  // }
-
   if (!rs.test(pass)) {
     document.getElementById("passwords").innerHTML =
-      " ** Required: atleat length 8, 1 uppercase, 1 lowercase, 1 number and a special character";
+      " ** Required: atleast length 8, 1 uppercase, 1 lowercase, 1 number and a special character ";
     return false;
   } else {
     document.getElementById("passwords").innerHTML = "";

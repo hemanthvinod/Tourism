@@ -35,7 +35,7 @@ function checkInputs() {
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
   var rs =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~@$!%*?&#~^_])[A-Za-z\d@$!%*?&#~^_]{8,}$/;
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~@$!%*?&#^_])[A-Za-z\d@$!%*?&#~^_]{8,}$/;
 
   if (emailValue == "") {
     setError(email, "Email is required");
